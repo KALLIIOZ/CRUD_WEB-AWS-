@@ -1,0 +1,29 @@
+        h2 {
+            text-align: center; 
+            background-color: #007bff; /* Color de fondo azul */
+            color: #ffffff; /* Texto blanco */
+            padding: 10px;
+            border-radius: 10px;
+
+        }
+
+        /* Estilo para los campos de código y nombre */
+        .form-label {
+            font-size: 1.2em; /* Tamaño de la fuente */
+        }
+
+        .form-control {
+            width: 70%; /* Ancho del campo */
+        }
+
+        /* Estilo para los botones */
+        .btn-group {
+            text-align: center; /* Centrar los botones horizontalmente */
+            margin-top: 20px; /* Espacio superior */
+            border-radius: 10px;
+        }
+
+        .btn-primary {
+            margin: 0 10px; /* Margen entre botones */
+            border-radius: 10px;
+        }
