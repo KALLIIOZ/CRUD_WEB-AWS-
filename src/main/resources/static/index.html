@@ -122,6 +122,48 @@
                 console.error('Error:', error);
             });
     }
+    
+    function checkIfExists() {
+    const formStudentCode = document.getElementById("studentCode").value;
+    const formStudentEmail = document.getElementById("studentEmail").value;
+
+    const apiUrl = "http://localhost:5000/students";
+
+    const studentData = {
+        code: formStudentCode,
+        email: formStudentEmail
+    };
+
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(studentData)
+    };
+
+    fetch(apiUrl, requestOptions)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.exists) {
+                showAlert("El estudiante ya existe en la base de datos.");
+            } else {
+                showAlert("El estudiante no existe en la base de datos.");
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+function showAlert(message) {
+    alert(message);
+}
 </script>
 </body>
 </html>
